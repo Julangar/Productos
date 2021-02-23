@@ -46,6 +46,10 @@ def index():
 def agregar():
     return render_template("agregar.html")
 
+@app.route("/sacar")
+def sacar():
+    return render_template("sacar.html")
+
 @app.route("/agregar/<nombre>/<int:valor>/<int:cantidad>")
 def agregarp(nombre, valor, cantidad):
     datos = {"nombre": nombre, 

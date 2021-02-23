@@ -1,0 +1,36 @@
+body{
+   background-color: rgb(241, 221, 131);
+}
+h1{
+   font-family: cursive;
+}
+table {
+   width: 100%;
+   border: 1px solid #000;
+}
+th, td {
+   width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+}
+caption {
+   padding: 0.3em;
+   color: #fff;
+   background: #000;
+}
+th {
+   background: #eee;
+}
+input{
+   font-style: oblique;
+   font-family: cursive;
+}
+
+label{
+   font-style: oblique;
+}
+ 
