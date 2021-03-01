@@ -61,6 +61,17 @@ def agregarp(nombre, valor, cantidad):
     db.session.add(p)
     db.session.commit()
     return principal()
+
+@app.route("/modificar/<int:id>/<int:cantidad>/<int:valor>")
+def modificar(id, cantidad, valor):
+    p = producto.query.filter_by(id=id).first()
+    if cantidad < 0 | valor < 0:
+        return principal()
+    else:
+        p.producto_cantidad = cantidad
+        p.producto_valor = valor
+        db.session.commit()
+        return principal()
     
 @app.route("/agregarc/<int:id>/<int:cantidad>")
 def agregarc(id, cantidad):

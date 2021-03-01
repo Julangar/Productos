@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sacar del Producto</title>
+        <title>Modificar Producto</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default.css') }}">
     </head>
     <script>
-        function sacar_producto(){
-            id_nombre = document.getElementById("nombre").value;
-            id_valor = document.getElementById("valor").value;
+        function modificar_producto(){
+            id_id = document.getElementById("id").value;
             id_cantidad = document.getElementById("cantidad").value;
+            id_valor = document.getElementById("valor").value;
             alert("Inventario Actualizado");
-            fetch("http://localhost:5000"+"/sacarc/"+id_nombre+"/"+parseInt(id_cantidad,10))
+            fetch("http://localhost:5000"+"/modificar/"+id_id+"/"+parseInt(id_cantidad,10)+"/"+parseInt(id_valor,10))
         }
     </script>
     <body>
-        <h1>Agregar Producto</h1>
+        <h1>Modificar Producto</h1>
         <div>
-            <label for="id">Nombre del producto</label>
-            <input id="nombre">
-            <label for="valor">Valor del producto</label>
-            <input id="valor">
+            <label for="id">Id del producto</label>
+            <input id="id">
             <label for="cantidad">Cantidad del producto</label>
             <input id="cantidad">
-            <button onclick="sacar_producto()" ><a href ="{{ url_for('index') }}">Modificar cantidad</a></button>
+            <label for="valor">Valor del producto</label>
+            <input id="valor">
+            <input name = "Modificar" type="button" value="Modificar" onclick = "modificar_producto();location.href='{{ url_for('index') }}'">
             <input name = "Salir" type="button" value="Salir" onclick = location.href="{{ url_for('index') }}">
         </div>
     </body>
